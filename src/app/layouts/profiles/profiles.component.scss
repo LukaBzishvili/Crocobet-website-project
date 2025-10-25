@@ -126,3 +126,12 @@
     }
   }
 }
+
+@media only screen and (max-width: 500px) {
+  .profiles-cont {
+    padding: 0;
+    .profiles-list {
+      height: 65vh;
+    }
+  }
+}
