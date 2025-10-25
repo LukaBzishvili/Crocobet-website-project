@@ -1,0 +1,23 @@
+<section class="todos-cont">
+  <div class="todos-filter">
+    <label for="sort">Sort Todos:</label>
+    <select id="sort" (change)="onSortChange($event)">
+      <option value="completed-first">Completed First</option>
+      <option value="incomplete-first">Incomplete First</option>
+    </select>
+  </div>
+
+  <div class="todos">
+    <div
+      [ngClass]="{ completed: todo.completed }"
+      class="todo-card"
+      *ngFor="let todo of todos; index as i"
+    >
+      <h3>{{ todo.title }}</h3>
+      <span *ngIf="todo.completed" class="material-symbols-outlined">
+        check
+      </span>
+    </div>
+  </div>
+  <app-loader [isLoading]="isLoading"></app-loader>
+</section>

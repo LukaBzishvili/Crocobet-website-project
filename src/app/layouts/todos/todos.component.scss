@@ -1,0 +1,56 @@
+.todos-cont {
+  position: relative;
+  .todos-filter {
+    padding: 30px 20px;
+    margin-bottom: 15px;
+    label {
+      margin-right: 10px;
+      color: white;
+    }
+    select {
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: none;
+      background-color: #111419;
+      color: white;
+      border: 1px solid white;
+    }
+  }
+
+  .todos {
+    height: 80vh;
+    overflow-y: scroll;
+
+    .todo-card {
+      border-bottom: 2px solid gray;
+      border-left: 2px solid gray;
+      border-right: 2px solid gray;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
+      padding: 10px 20px;
+
+      h3 {
+        color: white;
+      }
+    }
+
+    .completed {
+      background-color: rgb(56, 142, 56);
+    }
+
+    &:first-child {
+      border-top: 2px solid gray;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .todos-cont {
+    .todos {
+      height: 60vh;
+    }
+  }
+}

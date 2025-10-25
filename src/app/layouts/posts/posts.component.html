@@ -1,0 +1,25 @@
+<section class="posts-cont">
+  <div class="posts">
+    <div *ngIf="isOneUser" class="user-name-title">
+      <h1>{{ user?.name }}</h1>
+    </div>
+    <div class="post-card" *ngFor="let post of posts; index as i">
+      <div class="post-user">
+        <div class="user-name">
+          <span class="material-symbols-outlined"> person_2 </span>
+          <h2>{{ getUserName(post.userId) }}</h2>
+        </div>
+        <div class="user-company">
+          <span> Works at {{ getUserCompany(post.userId) }} </span>
+        </div>
+      </div>
+      <div class="post-content">
+        <h3>{{ post.title }}</h3>
+        <p>
+          {{ post.body }}
+        </p>
+      </div>
+    </div>
+  </div>
+  <app-loader [isLoading]="isLoading"></app-loader>
+</section>

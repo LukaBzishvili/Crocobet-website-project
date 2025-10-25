@@ -1,0 +1,51 @@
+<section class="profiles-cont">
+  <div class="profiles-search-cont">
+    <input
+      #searchInput
+      type="text"
+      (keyup)="searchForProfiles(searchInput.value)"
+      placeholder="Search for people..."
+    />
+    <div
+      #searchResultsCont
+      class="search-results-cont"
+      *ngIf="showResults && searchResults.length > 0"
+    >
+      <ul>
+        <li *ngFor="let user of searchResults; index as j">
+          <a [routerLink]="'/posts/' + user.id">{{ user.name }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="profiles-list">
+    <div *ngFor="let user of users; index as i">
+      <div class="profile-card">
+        <h2>{{ user.name }}</h2>
+        <div>
+          <span>Phone Number</span>
+          <p>{{ user.phone }}</p>
+        </div>
+        <div>
+          <span>Email</span>
+          <p>{{ user.email }}</p>
+        </div>
+        <div>
+          <span>Company</span>
+          <p>{{ user.company.name }}</p>
+        </div>
+        <div class="profile-btns">
+          <button class="posts-btn" (click)="SeeUserPosts(user.id)">
+            See Posts
+          </button>
+          <button class="todos-btn" (click)="SeeUserTodos(user.id)">
+            See Todos
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-loader [isLoading]="isLoading"></app-loader>
+</section>

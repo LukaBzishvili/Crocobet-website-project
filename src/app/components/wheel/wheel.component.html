@@ -1,0 +1,27 @@
+<div class="wheel-cont">
+  <div
+    class="wheel"
+    [style.transform]="'rotate(' + rotation + 'deg)'"
+    [class.spinning]="spinning"
+  >
+    <div
+      class="sector"
+      *ngFor="let num of sectors; let i = index"
+      [style.transform]="'rotate(' + i * 36 + 'deg)'"
+    >
+      <span>{{ num }}</span>
+    </div>
+  </div>
+
+  <div class="pointer"></div>
+
+  <div class="controls">
+    <input
+      type="number"
+      [(ngModel)]="selectedNumber"
+      placeholder="Enter number (1-10)"
+    />
+    <button (click)="spinWheel()">Spin</button>
+    <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+  </div>
+</div>

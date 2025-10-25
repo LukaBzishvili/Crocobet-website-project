@@ -1,0 +1,128 @@
+.profiles-cont {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #111419;
+  position: relative;
+  .profiles-search-cont {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    position: relative;
+    input {
+      padding: 10px 12px;
+      min-width: 300px;
+      font-size: 20px;
+      background-color: #072c38;
+      border-radius: 20px;
+      outline: none;
+      color: white;
+      border: 3px solid rgb(28, 28, 28);
+    }
+    input::placeholder {
+      color: white;
+    }
+    input:focus {
+      border: 3px solid rgba(0, 0, 0, 0.74);
+    }
+
+    .search-results-cont {
+      position: absolute;
+      top: 65px;
+      min-width: 300px;
+      // left: 0;
+      background-color: #072c38;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      overflow: hidden;
+      ul {
+        li {
+          list-style: none;
+          padding: 3px 10px;
+          cursor: pointer;
+          border-bottom: 0.5px solid gray;
+          border-left: 0.5px solid gray;
+          border-right: 0.5px solid gray;
+
+          &:last-child {
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+          }
+
+          &:hover {
+            background-color: #0c475a;
+          }
+          a {
+            text-decoration: none;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+  .profiles-list {
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    .profile-card {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
+      color: white;
+      background-color: #072c38;
+      height: 210px;
+      width: 220px;
+      padding: 20px 10px;
+      border-radius: 15px;
+      margin: 20px;
+      h2 {
+        margin-bottom: 10px;
+        font-size: 22px;
+      }
+      span {
+        margin-bottom: 2px;
+        color: gray;
+        font-size: 12px;
+      }
+      p {
+        font-size: 14px;
+      }
+      .profile-btns {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .todos-btn,
+        .posts-btn {
+          margin-top: 10px;
+          color: white;
+          background-color: black;
+          border: none;
+          padding: 7px 10px;
+          border-radius: 10px;
+          cursor: pointer;
+          &:hover {
+            background-color: rgb(212, 210, 210);
+            color: black;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .profiles-cont {
+    .profiles-list {
+      height: 65vh;
+    }
+  }
+}

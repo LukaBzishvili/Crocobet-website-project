@@ -1,0 +1,34 @@
+<div class="leaderboard-cont">
+  <h1>Leaderboard</h1>
+
+  <div class="filters">
+    <button
+      *ngFor="let week of weeks"
+      [class.active]="activeWeek === week"
+      (click)="filterLeaderboard(week)"
+    >
+      {{ week }}
+    </button>
+    <div class="dropdown-cont">
+      <select [(ngModel)]="activeWeek" (change)="filterLeaderboard(activeWeek)">
+        <option *ngFor="let week of weeks" [value]="week">{{ week }}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="leaderboard-table">
+    <div class="header">
+      <span>#</span>
+      <span>Login</span>
+      <span>Week</span>
+      <span>Customer ID</span>
+    </div>
+
+    <div class="entry" *ngFor="let user of filteredLeaderboard">
+      <span>{{ user.place }}</span>
+      <span>{{ user.loginName }}</span>
+      <span>{{ user.week }}</span>
+      <span>{{ user.customerId }}</span>
+    </div>
+  </div>
+</div>

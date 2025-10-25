@@ -1,0 +1,134 @@
+.leaderboard-cont {
+  width: 500px;
+  margin: 50px auto;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  background: #072c38;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+  h1 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: white;
+  }
+
+  .filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+
+    button {
+      padding: 10px 20px;
+      border: 2px solid #2c3e50;
+      border-radius: 8px;
+      background: white;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        background: #ecf0f1;
+      }
+
+      &.active {
+        background: #2c3e50;
+        color: white;
+        border-color: #2c3e50;
+      }
+    }
+
+    .dropdown-cont {
+      display: none;
+      select {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px 15px;
+        border-radius: 8px;
+        border: 2px solid #2c3e50;
+        background: #111419;
+        color: white;
+        font-weight: 500;
+        cursor: pointer;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-image: url('data:image/svg+xml;utf8,<svg fill="white" height="12" viewBox="0 0 24 24" width="12" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        background-size: 12px;
+        padding-right: 35px;
+      }
+    }
+  }
+
+  .leaderboard-table {
+    width: 100%;
+    border-top: 2px solid #ddd;
+    height: 300px;
+    overflow-y: scroll;
+
+    .header,
+    .entry {
+      display: grid;
+      grid-template-columns: 60px 1fr 80px 1fr;
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+      color: white;
+    }
+
+    .header {
+      font-weight: bold;
+      background: #11141972;
+    }
+
+    .entry {
+      transition: background 0.2s;
+
+      &:hover {
+        background: #11141972;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .leaderboard-cont {
+    width: 400px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .leaderboard-cont {
+    width: 90%;
+    box-sizing: border-box;
+
+    .filters {
+      button {
+        display: none;
+      }
+
+      .dropdown-cont {
+        display: block;
+        width: 100%;
+
+        select {
+          background-color: #111419;
+          color: white;
+          width: 100%;
+        }
+      }
+    }
+
+    .leaderboard-table {
+      .header,
+      .entry {
+        box-sizing: border-box;
+        grid-template-columns: 50px 1fr 60px 1fr;
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+.app-cont {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-height: 100%;
+  // max-width: 1024px;
+  align-items: stretch;
+  margin: 0 auto;
+  // box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  // .left-content {
+  //   // display: flex;
+  //   // flex-direction: column;
+  //   // width: 100%;
+  //   max-width: 1024px;
+  //   margin: 0 auto;
+  // }
+
+  .right-content {
+    // padding: 80px 0 0 80px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    max-width: 1024px;
+
+    .router-cont {
+      padding-left: 80px;
+      padding-top: 80px;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .app-cont {
+    // .left-content {
+    // }
+
+    .right-content {
+      padding: 110px 0 0 0;
+      .router-cont {
+        padding-left: 0;
+        padding-top: 0;
+      }
+    }
+  }
+}
